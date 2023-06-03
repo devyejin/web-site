@@ -1,0 +1,218 @@
+/* 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+
+/* 기본 css 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* 박스 영역은 테두리까지로 지정 즉, 우리가 잡는 width에 border 다 포함되도록*/
+
+}
+
+a {
+
+  text-decoration: none;
+}
+
+ul {
+  list-style: none; /* 불릿 기호 제거 */
+}
+
+/* ------------------------------------------------------------- */
+
+#container {
+  margin: 0 auto; /* 상하 0, 좌우 auto => 가운데 정렬 */
+  width: 1200px; /* 전체크기를 1200px로 잡음 */
+}
+
+
+/* ------------------ 헤더 --------------------------*/
+header {
+  
+  width: 100%;
+  height: 100px;
+  background-color: #07c;
+  
+}
+
+/* 로고 */
+#logo {
+
+  float : left;
+  width: 250px;
+  height: 100%;
+  padding-left: 20px;/* 왼쪽 padding 부여 */
+  line-height: 100px; /* height 값과 같도록 하면 가운데 정렬이 된다  */
+}
+
+#logo h1 {
+  font-family:  'Merienda', cursive;
+  font-weight: 700; /* 폰트 굵기 */
+  font-size : 40px;
+  color : #fff;
+  text-shadow: 0 -1px 0 #222 ; /* x y 기울기 컬러 */
+}
+
+/* 내비게이션 */
+nav {
+  float : right;
+  width: 900px;
+  height: 100%; /* header에 속하니까 100px임 */
+  padding-top : 40px; /* 위로붙으니까 padding 주기 */
+}
+
+#topMenu {
+  height : 60px
+}
+
+#topMenu > li { /* 자식(1촌) li 들 다 해당됨 */
+  float: left;/* 메뉴 왼쪽 배치 */
+  position : relative; /* 자식이 부모따라 변하게하려면 부모re 자식ab */
+}
+
+
+#topMenu > li > a {
+  display: block; /* 링크 텍스트 lnline -> block */
+  color: #fff;
+  font-weight : 600;
+  text-shadow: 0 1px #07c;
+  padding : 20px 60px;
+  
+}
+
+#topMenu > li > a > span {
+  font-size : 0.5em;/* 상대크기 a폰트의 50% */
+}
+
+
+#topMenu > li > a:hover {/* a태그에 마우스 올렸을 때 (css로도 이벤트 가능) */
+  color: #000;
+  text-shadow: 0 -1px #07c;/* 글자 굵어지지않도록 */
+
+}
+
+/* 서브메뉴 */
+#topMenu > li > ul {
+  display: none; /* 처음에 감추기 */
+  position: absolute;
+  width: 160px;
+  background-color: rgba(255,255,255,0.6); /* 배경 투명색 */
+  left : 20px;/* 왼쪽을 기준으로 얼마나 떨어질 것인가 */
+  margin: 0;
+}
+
+#topMenu > li > ul > li {
+  padding : 10px 10px 10px 30px; 
+}
+
+#topMenu > li > ul > li > a {
+  font-size: 14px;
+  padding: 10px;
+  color: #000;
+}
+
+#topMenu > li:hover > ul { /* 본메뉴에 마우스가 올라가면 ul(하위메뉴)보여줘라 */
+  display: block;
+  z-index: 10; /* 상대깊이 요소겹칠때 사용하는 듯 */
+  /* z-index값 마이너스주니까 레이아웃뒤쪽이라 출력이 안됨 */
+}
+
+#topMenu > li > ul > li > a:hover {
+  /* 하위메뉴에 포인터올라가면 효과 */
+  color: #f00;
+}
+
+
+
+
+
+/* ------------------ 슬라이드 이미지쇼 --------------------------*/
+
+
+/* slideShow */
+#slideShow {
+  width: 100%;
+  height:300px ;
+  clear: both; /* 플로팅 해제 */
+  overflow: hidden; /* 영역 넘치면 감춤, 이미지 사이즈가 큰 경우*/
+  position: relative; /* 자식slides가 부모slideShow 쫓아다니도록 부모 re, 자식 ab */
+}
+
+#slides {
+  position: absolute;
+}
+
+#slides > img {
+  width: 100%; /* 너비 물려받음 1200px */
+  float: left; /* 가로 배치 */
+}
+
+button {
+  position : absolute; /* 부모 slideShow따라 다님 */
+  height: 100%; /* 300px */
+  top : 0;
+  border : none; 
+  padding : 20px;
+  background-color: transparent; /* 투명한 배경 지정 */
+  color : #000;
+  font-weight: 800;
+  font-size: 20px;
+  opacity: 0.5; /* 화살표 반투명하게 지정 */
+
+}
+
+#prev {
+  left : 0; /* 왼쪽으로 붙이기 */
+
+}
+
+#next {
+  right : 0;
+}
+
+button:hover {
+  background-color: #222; /* 버튼 올리면 짙은 회색 */
+  color: #fff; 
+  opacity: 0.6; 
+  cursor: pointer; /* 화살표 모양 변경 */
+}
+
+button:focus {
+  outline: 0; /* 아웃라인 제거 */
+}
+
+
+/* ------------------ 컨텐츠 --------------------------*/
+
+
+/* content */
+#content {
+  width: 100%;
+  height: 300px;
+  background-color:rebeccapurple;
+}
+
+#tabMenu {
+  float : left;
+  width: 600px;
+  height: 100%;
+  background-color: pink;
+}
+
+#links {
+  float: right;
+  width: 600px;
+  height: 100%;
+  background-color: skyblue;
+}
+
+/* ------------------ 푸터  --------------------------*/
+
+
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: gray;
+  clear : both; 
+}
+
