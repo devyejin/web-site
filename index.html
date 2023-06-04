@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dream Jeju</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
@@ -53,10 +53,8 @@
                 <img src="images/photo-3.jpg" alt="배경3">
                 <button id="prev">&lang;</button>
                 <button id="next">&rang;</button>
+                
               </div>
-
-
-
             </div>
 
 
@@ -64,16 +62,97 @@
             <!-- content -->
             <div id="content">
               <!-- 탭 메뉴 -->
-              <div id="tabMenu"></div>
-                <!-- 큌 링크 -->
-              <div id="links"></div>
+              <div id="tabMenu">
+                <input type="radio" id="tab1" name="tabs" checked> <!-- name : 서버로 넘어가는 value 명 -->
+                <label for="tab1">공지사항</label>
+                <input type="radio" id="tab2" name="tabs">
+                <label for="tab2">갤러리</label>
+
+                <!-- tabMenu 내용을 담을 영역 -->
+                <div id="notice" class="tabContent">
+                  <h2>공지사항 내용입니다.</h2>
+                  <ul>
+                    <li>사무실을 이전했습니다</li>
+                    <li>[참가 모집] 카약 체험에 초대합니다.</li>
+                    <li>[참가 모집] 여름 방학 기간, 오름 체험단을 모집합니다.</li>
+                    <li>겨울, 추천 여행지</li>
+                    <li>가을, 추천 여행지</li>  
+                  </ul>
+                </div>
+
+                <div id="gallery" class="tabContent">
+                  <h2>갤러리 내용입니다.</h2>
+                  <ul>
+                    <li><img src="images/img-1.jpg"></li>
+                    <li><img src="images/img-2.jpg"></li>
+                    <li><img src="images/img-3.jpg"></li>
+                    <li><img src="images/img-1.jpg"></li>
+                    <li><img src="images/img-2.jpg"></li>
+                    <li><img src="images/img-3.jpg"></li>                     
+                  </ul>
+                </div>  
+
+
+              </div>
+
+              <!-- 큌 링크 -->
+              <div id="links">
+                <ul>
+                  <li>
+                    <a href="#"> <!-- 연결될 링크 -->
+                      <span id="quick-icon1"></span>
+                      <p>평화기행</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"> <!-- 연결될 링크 -->
+                      <span id="quick-icon2"></span>
+                      <p>힐링 워크숍</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#"> <!-- 연결될 링크 -->
+                      <span id="quick-icon3"></span>
+                      <p>문의하기</p>
+                    </a>
+                  </li>
+            
+                </ul>
+
+              </div>
             </div>
 
             <!-- footer -->
-            <footer></footer>
+            <footer>
+              <div id="bottomMenu">
+                <!--링크 연결되는 부분-->
+                <ul>
+                  <li><a href="#">회사 소개</a></li>
+                  <li><a href="#">개인정보처리방침</a></li>
+                  <li><a href="#">여행약관</a></li>
+                  <li><a href="#">사이트맵</a></li>
+                </ul>
+
+                <!-- sns -->
+                <div id="sns">
+                  <ul>
+                    <li><a href="#"><img src="images/sns-1.png"></a></li>
+                    <li><a href="#"><img src="images/sns-2.png"></a></li>
+                    <li><a href="#"><img src="images/sns-3.png"></a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 회사 소개 -->
+              <div id="company">
+                <address>
+                  <p>제주특별자치도 ***동 ***로 *** (대표전화) 123-456-7890</p> 
+                </address>
+              </div>
+            </footer>
 
         </div>
-
+    <script src="js/slideShowAuto.js"></script>
     </body>
 
 </html>
